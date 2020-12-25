@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -40,7 +41,7 @@ public class UserValidation {
     }
 
 
-    public static String usernameValidation() {
+    public static String usernameValidation(List<User> a) {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("----Input user's username----");
@@ -50,16 +51,20 @@ public class UserValidation {
 
         if (username.matches("^[A-Za-z0-9+_.-]+") && username.length() > 10) {
 
+            for (int i = 0; i < a.size(); i++) {
+               if(!(a.get(i).getUsername().equals(username))){
+                   return username;
+               }else{
+                   System.out.println("Username is Busy");
+                   usernameValidation(a);
+               }
+            }
 
-            return username;
 
+            }
 
-
-
-
-        }
         System.out.println("Wrong Input");
-        return usernameValidation();
+        return usernameValidation(a);
 
     }
 
@@ -105,6 +110,10 @@ public class UserValidation {
         }
         return null;
     }
+
+
+
+
 
 
 }

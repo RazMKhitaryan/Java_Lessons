@@ -24,11 +24,11 @@ public class MyWebSite {
                     String login = scanner.next();
                     System.out.println("Password");
                     String password = scanner.next();
-                    UserService.setUser(st, userList);
-                    UserService.logIn(login, password, userList);
+                    List<User> userList1 = UserService.setUser(st, userList);
+                    UserService.logIn(login, password, userList1);
                     break;
                 case 2:
-                    UserService.createUser();
+                    UserService.createUser(UserService.setUser(st, userList));
                     break;
 
                 case 3:
