@@ -1,17 +1,15 @@
-
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 
 public class UserService {
-    public static void createUser() throws Exception {
+    public static void createUser(List<User> a) throws Exception {
         String name = UserValidation.namevalidation();
         String email = UserValidation.emailValidation();
-        String username = UserValidation.usernameValidation();
+        String username = UserValidation.usernameValidation(a);
         String password = UserValidation.Hash(UserValidation.passwordValidation());
 
         String userInfo = name + "," + email + "," + username + "," + password + "\n";
@@ -23,7 +21,7 @@ public class UserService {
     }
 
 
-    public static void setUser(List<String>st, List<User> userList) throws Exception {
+    public static List<User> setUser(List<String> st, List<User> userList) throws Exception {
         String[] read = FileService.read("base.txt").toArray(new String[0]);
         String s = Arrays.toString(read);
 
@@ -31,7 +29,6 @@ public class UserService {
 
         String t = y.delete(0, 1).toString();
         String q = y.delete(y.length() - 1, y.length()).toString();
-
 
         String[] split1 = q.split(",", q.length());
         String f1 = " ";
@@ -59,7 +56,7 @@ public class UserService {
 
         }
 
-
+        return userList;
     }
 
 
@@ -82,6 +79,13 @@ public class UserService {
             System.out.println("User not found");
         }
     }
+
+
+
+
+
+
+
 }
 
 
