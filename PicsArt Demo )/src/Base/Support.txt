@@ -1,0 +1,4 @@
+Narine,Zakarian,1988,f,6.3
+Gagik,Khachatryan,1998,m,0.8
+Ruzanna,Gevorgyan,1988,f,4.1
+Kaka,Kakosyan,1977,m,4.1
