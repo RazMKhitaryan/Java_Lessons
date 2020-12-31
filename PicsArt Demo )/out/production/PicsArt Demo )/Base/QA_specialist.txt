@@ -1,0 +1,4 @@
+Razmik,Martirosyan,1995,m,1.3
+Ando,Hakobyan,1996,m,1.5
+Hamo,Kirakosyan,1998,m,4.1
+Karine,Sahakyan,1998,f,0.5
