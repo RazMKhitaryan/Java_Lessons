@@ -1,3 +1,6 @@
+/**
+ * Worker class is parent class of Ceo, Developer,QA, and Support classes
+ */
 package MyWorkers;
 
 public class Worker {
@@ -43,5 +46,13 @@ public class Worker {
         return experience;
     }
 
+    @Override
+    public String toString() {
+        return "Name: " + firstName + "\n"+
+                "Lastname: " +  lastName + "\n"+
+                "Year: " +  year + "\n"+
+                "Gender: "+  gender + "\n"+
+                "Experience: " + experience + "\n" ;
 
+    }
 }

@@ -2,6 +2,11 @@ package Service;
 
 import Interfaces.CodeWriting;
 import Interfaces.Languages;
+import MyWorkers.Ceo;
+import MyWorkers.Developer;
+import MyWorkers.Worker;
+
+import java.util.List;
 
 
 public class DeveloperService extends WorkerService implements CodeWriting, Languages {
@@ -37,4 +42,20 @@ public class DeveloperService extends WorkerService implements CodeWriting, Lang
     }
 
 
+    /**
+     * From Developer.txt file read and set Developer members in devList
+     * @param read
+     * @param devList
+     * @return
+     */
+    public static List<Worker> setDeveloper(List<String> read, List<Worker> devList){
+        for (int j = 0; j < read.size(); j++) {
+            devList.add(new Developer(read.get(j)));
+
+        }
+
+
+        return devList;
+
+    }
 }

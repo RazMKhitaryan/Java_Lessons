@@ -2,6 +2,10 @@ package Service;
 
 import Interfaces.CodeWriting;
 import Interfaces.Languages;
+import MyWorkers.Developer;
+import MyWorkers.Worker;
+
+import java.util.List;
 
 
 public class QA_SpecialistService extends WorkerService implements CodeWriting, Languages {
@@ -43,6 +47,20 @@ public class QA_SpecialistService extends WorkerService implements CodeWriting, 
         System.out.println("AzureDevOps");
         System.out.println("Selenium & Appium");
     }
+    /**
+     * From QA_specialist.txt file read and set QA members in qaList
+     * @param read
+     * @return qaList
+     */
+    public static List<Worker> setQA(List<String> read, List<Worker> qaList) {
+        for (int j = 0; j < read.size(); j++) {
+            qaList.add(new Developer(read.get(j)));
 
+        }
+
+
+        return qaList;
+
+    }
 
 }
